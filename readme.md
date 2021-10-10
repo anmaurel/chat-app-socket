@@ -10,7 +10,7 @@ Use Docker Compose to run the containers of app.
 docker-compose up -d --build
 ```
 
-**Be sure to have ports 3000 and 9000 unassigned (otherwise change them in the docker-compose.yml file at the root of the project)**
+**Be sure to have ports 3000 and 9000 unassigned**
 
 ## Usage
 
