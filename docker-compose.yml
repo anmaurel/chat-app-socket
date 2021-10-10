@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+    db:
+        build: ./db
+        container_name: db_node_a5
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: admin
+        ports:
+            - 27017:27017
+        restart: always
+
+    back:
+        build: ./back
+        container_name: back_node_a5
+        ports:
+            - 9000:9000
+        restart: on-failure
+
+    front:
+        build: ./front
+        container_name: front_node_a5
+        ports:
+            - 3000:80
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
