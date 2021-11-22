@@ -166,7 +166,7 @@ export default {
     },
     created() {
         axios
-            .get('https://node.amaurel.tk:9000/room')
+            .get('https://node.amaurel.tk/back/room')
             .then((response) => {
                 this.rooms = response.data;
             })

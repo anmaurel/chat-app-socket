@@ -45,12 +45,12 @@ export default {
             errors: [],
             nickname: this.$route.params.nickname,
             chat: {},
-            socket: io('https://node.amaurel.tk:9000'),
+            socket: io('https://node.amaurel.tk/back'),
         };
     },
     created() {
         axios
-            .get('https://node.amaurel.tk:9000/chat/' + this.$route.params.id, { headers: { Authorization: `Bearer ${localStorage.token}` } })
+            .get('https://node.amaurel.tk/back/chat/' + this.$route.params.id, { headers: { Authorization: `Bearer ${localStorage.token}` } })
             .then((response) => {
                 console.log(response.data);
                 this.chats = response.data;
@@ -79,7 +79,7 @@ export default {
             this.chat.room = this.$route.params.id;
             this.chat.nickname = this.$route.params.nickname;
             axios
-                .post('https://node.amaurel.tk:9000/chat/add', this.chat, { headers: { Authorization: `Bearer ${localStorage.token}` } })
+                .post('https://node.amaurel.tk/back/chat/add', this.chat, { headers: { Authorization: `Bearer ${localStorage.token}` } })
                 .then((response) => {
                     this.socket.emit('save-message', response.data);
                     this.chat.message = '';
