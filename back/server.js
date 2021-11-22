@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const dbString = 'mongodb://admin:admin@db:27017/?authSource=admin';
+const dbString = 'mongodb://iim-db:ouCK0jUosphxj3TQSNswSbkTWCOJIFBczsqJqOMqi6UZ78Hn6x3KPb7mZ3ujCpdgtN96RSnTk3V1irhhCbyaVw==@iim-db.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@iim-db@';
 
 mongoose
     .connect(dbString, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -19,7 +19,7 @@ mongoose
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
-    cors: { origin: 'http://localhost:3000', methods: ['GET', 'POST', 'PUT', 'DELETE'] },
+    cors: { origin: 'http://localhost:80', methods: ['GET', 'POST', 'PUT', 'DELETE'] },
 });
 
 io.on('connection', (socket) => {

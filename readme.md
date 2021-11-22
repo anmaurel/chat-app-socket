@@ -10,11 +10,11 @@ Use Docker Compose to run the containers of app.
 docker-compose up -d --build
 ```
 
-**Be sure to have ports 3000 and 9000 unassigned**
+**Be sure to have ports 80 and 9000 unassigned**
 
 ## Usage
 
--> Access to http://localhost:3000
+-> Access to http://localhost:80
 
 -> Register a new user
 
