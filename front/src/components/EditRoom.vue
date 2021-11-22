@@ -115,7 +115,7 @@ export default {
         onSubmit(evt) {
             evt.preventDefault();
             axios
-                .put('https://back.node.amaurel.tk/room/update/' + this.$route.params.id, this.form, { headers: { Authorization: `Bearer ${localStorage.token}` } })
+                .put('https://back.amaurel.tk/room/update/' + this.$route.params.id, this.form, { headers: { Authorization: `Bearer ${localStorage.token}` } })
                 .then((response) => {
                     this.form = response.data;
                     this.closeModal();

@@ -80,7 +80,7 @@ export default {
     data() {
         return {
             chat: {},
-            socket: io('https://back.node.amaurel.tk'),
+            socket: io('https://back.amaurel.tk'),
             user: localStorage.user,
         };
     },
@@ -90,7 +90,7 @@ export default {
             this.chat.message = this.user + ' join the room';
 
             axios
-                .post('https://back.node.amaurel.tk/chat/add', this.chat, { headers: { Authorization: `Bearer ${localStorage.token}` } })
+                .post('https://back.amaurel.tk/chat/add', this.chat, { headers: { Authorization: `Bearer ${localStorage.token}` } })
                 .then((response) => {
                     this.socket.emit('save-message', { room: this.chat.room, nickname: this.user, message: 'Join this room', created_date: new Date() });
                     this.closeModal();

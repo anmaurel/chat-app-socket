@@ -142,7 +142,7 @@ export default {
         onSubmit(evt) {
             evt.preventDefault();
             axios
-                .post(`https://back.node.amaurel.tk/user/login`, this.form)
+                .post(`https://back.amaurel.tk/user/login`, this.form)
                 .then((response) => {
                     this.form = response.data;
                     this.$store.dispatch('login', response.data);
