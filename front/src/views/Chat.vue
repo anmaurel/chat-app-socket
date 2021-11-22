@@ -18,7 +18,7 @@ export default {
         getChat() {
             this.loading = false;
             axios
-                .get('https://node.amaurel.tk/back/chat')
+                .get('https://back.node.amaurel.tk/chat')
                 .then((response) => {
                     this.chats.push(response.data);
 
