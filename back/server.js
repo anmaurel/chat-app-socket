@@ -19,7 +19,7 @@ mongoose
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
-    cors: { origin: 'http://localhost:80', methods: ['GET', 'POST', 'PUT', 'DELETE'] },
+    cors: { origin: 'https://node.amaurel.tk', methods: ['GET', 'POST', 'PUT', 'DELETE'] },
 });
 
 io.on('connection', (socket) => {
