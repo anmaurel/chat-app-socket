@@ -75,7 +75,7 @@ export default {
     methods: {
         onConfirmDeletion() {
             axios
-                .delete('http://localhost:9000/room/delete/' + this.$route.params.id, { headers: { Authorization: `Bearer ${localStorage.token}` } })
+                .delete('https://node.amaurel.tk:9000/room/delete/' + this.$route.params.id, { headers: { Authorization: `Bearer ${localStorage.token}` } })
                 .then(() => {
                     this.closeModal();
                     this.$router.push({

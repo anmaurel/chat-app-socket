@@ -142,7 +142,7 @@ export default {
         onSubmit(evt) {
             evt.preventDefault();
             axios
-                .post(`http://localhost:9000/user/signup`, this.form)
+                .post(`https://node.amaurel.tk:9000/user/signup`, this.form)
                 .then((response) => {
                     this.form = response.data;
                     this.$store.dispatch('register', response.data);
