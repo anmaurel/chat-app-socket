@@ -4,8 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const dbString =
-    "mongodb://iim-db:ouCK0jUosphxj3TQSNswSbkTWCOJIFBczsqJqOMqi6UZ78Hn6x3KPb7mZ3ujCpdgtN96RSnTk3V1irhhCbyaVw==@iim-db.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@iim-db@";
+const dbString = "mongodb://admin:admin@db:27017/?authSource=admin";
 
 mongoose
     .connect(dbString, { useNewUrlParser: true, useUnifiedTopology: true })
